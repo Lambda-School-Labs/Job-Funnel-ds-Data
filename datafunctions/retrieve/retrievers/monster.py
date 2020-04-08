@@ -34,7 +34,7 @@ PHANTOMJSPATH = os.path.join(curpath, '../webdrivers/phantomjs-2.1.1-linux-x86_6
 
 
 class MonsterScraper(DataRetriever):
-	default_title_list = ['Data Analyst', 'Web Engineer', 'Software Engineer', 'UI Engineer', 'Backend Engineer', 'Machine Learning Engineer', 'Frontend Engineer', 'Support Engineer', 'Full-stack Engineer', 'QA Engineer', 'Web Developer', 'Software Developer', 'UI Developer', 'Backend Developer', 'Machine Learning Developer', 'Frontend Developer', 'Support Developer', 'Full-stack Developer', 'QA Developer', 'Developer']
+	default_title_list = ['Data Scientist', 'UX Designer', 'Designer', 'Data Analyst', 'Web Engineer', 'Software Engineer', 'UI Engineer', 'Backend Engineer', 'Machine Learning Engineer', 'Frontend Engineer', 'Support Engineer', 'Full-stack Engineer', 'QA Engineer', 'Web Developer', 'Software Developer', 'UI Developer', 'Backend Developer', 'Machine Learning Developer', 'Frontend Developer', 'Support Developer', 'Full-stack Developer', 'QA Developer', 'Developer']
 	search_base_url = 'https://www.monster.com/jobs/search/'
 	details_base_url = 'https://job-openings.monster.com/v2/job/pure-json-view'
 

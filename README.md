@@ -1,97 +1,84 @@
-# QuickHire
+### QUICK HIRE
 
-You can find the project at [QuickHire.dev](https://quickhire.dev)
+This project is part of the data science group for Labs project Quick Hire. Quick hire is a one stop job application portal for specifically for Lambda School students. 
 
-## Contributors
+You can find the live project at [QuickHire.dev](https://quickhire.dev)
 
-|[Pierre Nelson](https://github.com/alxanderpierre)                                                                                            |[Logan Keith](https://github.com/lrizika)                                                                                                    |[Baisal Ergeshev](https://github.com/Baisal89)|                                                                                                                                                                                                 
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars0.githubusercontent.com/u/51343473?s=400&v=4" width = "200" />](https://github.com/alxanderpierre)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UMHPCN3NW-ab422991fa22-512" width = "200" />](https://github.com/lrizika)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJRSD5X6H-c2998ebc2ac3-512" width = "200" />](https://github.com/Baisal89)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/alxanderpierre)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lrizika)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Baisal89)            |                     |                        |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pierre-nelson-26838a148/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/logan-k-3802b0195/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/baisal-ergeshev-52b3b342/) | 
-<br>
-<br>
+## Quickhire DS-Data Description
 
-## Project Overview
+This repository holds code for the Models and Web Scraper of Quick Hire. It also includes documentation for the code until the migration to FastAPI with its automatically generated documentation is complete. It will also include tests from Starlette (comes with FastAPI) once migration is complete. 
 
-https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/tree/master/docs
+### Methods Used
 
-
-[Trello Board](https://trello.com/b/dorhqi4o/job-funnel)
-
-[Product Canvas](https://www.notion.so/Job-Funnel-20ba287fac1c403c92a8ebb8766821a0)
-
-[UX Design files](https://www.figma.com/file/zljtkyosMyzAa1UMpcAIEd/Quick-Hire-Judy?node-id=263%3A2)
-
-[Backend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-be)
-
-[Data Science Repo](https://github.com/Lambda-School-Labs/Job-Funnel-ds-API)
-
-## Quickhire Description
-
-Quickhire is a web application that streamlines the job search process by allowing users to search, store, and apply for jobs -- all in one place. It allows you, as a user, to login, search for jobs that you're interested in, save them, and apply to them. 
-
-Our mission is to simplify the job-search and hiring process by bringing both to the same platform. Future releases will include a recruiter side of the app, which will allow for both kinds of users to interact with one another --- whether it be through initial contact, through an interview, or through any part of the job search process. 
-
+* Web Scraping
+* Machine Learning
+* Predictive Modeling
+* Deep Learning (to be implemented)
+* Code Coverage/Automated Testing (to be implemented)
 
 ### Tech Stack
 
-List all of the languages, frameworks, services: Python, Selenium, PostgresSQL, AWS Elastic Beanstalk, AWS Lambda function, AWS RDS. 
+* Python
+* Pandas, Jupyter
+* FastAPI
+* Starlette
+* Selenium 
+* PostgresSQL 
+* AWS Elastic Beanstalk 
+* AWS Lambda Functions
+* AWS RDS
 
-## Project Overview
+## QuickHire DS-Data More Detailed Description
 
-Finding jobs you like is hard. When you find many jobs you like, it’s hard to organize and prioritize them. It’s also hard to know your probability of getting a job based on it’s description.
-Help students get the best jobs matched to them using data science. And give them an awesome interface to store and and manage the jobs they want to pursue.
+The scraper, application.py (probably rename) uses Selenium to scrape Monster.com. Pre-processing is done with some basic data cleaning and also some feature engineering with Spacey. The production model is KNearestNeighbors which is not yet deployed to live searches.  
 
-### Dataset
+Model stuff is in datafunctions.
 
-We use the first 10,000 jobs listing that we scraped to train our model.
+The database (PostgreSQL) is hosted on AWS RDS (database-1). A summary of the structure can be found at docs/db_structure/db_structure.md, and schema details at docs/db_structure/awsrds.schema.
 
-### Models
+The web application is hosted on AWS elastic beanstalk. The documentation can be found here: https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/blob/master/docs/api/reference.md until migration to FastAPI is complete.
 
-Created a topic model to discover the topics that occured in our collection of documents to filter them for the grad. The type of topic model that we use was a LDA model. we use the gensim lib. Here is a link to the documentation https://radimrehurek.com/gensim/auto_examples/tutorials/run_lda.html
+Test Suite not implemented yet but to be updated here. 
 
-# from gensim.utils import simple_preprocess
+# QuickHire DS-Data Documentation
 
-We first had to tokenize the sentences into a list of words.
+Documentation for the models can be found in models.md
 
-# Bi-grams and Tri-grams
+Documentation for the API can be found [here] (https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/tree/master/docs) for: 
+* project architecture 
+* database structure and schema 
+* API/ / reference (until migration to FastAPI is complete)
+* project status (pending, may move here) 
+* lambda functions deployed to AWS.
 
-We then wanted to find the world that appeared the most times together. Such as Machine Learning/ Data Science etc.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-be) for details on the backend of our project.
+See [Frontend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-fe) for details on the frontend of our project.
 
-# Lemmatization and STOPWORDS
+## Needs of this Project
 
-We create a stopwords function to get rid of words that we thought we not useful and also implemented LEMMATIZATION to only allow for nouns adjs verbs and advs. This may be something that you may want to change later.
+TBD
 
-# Dictionary
+## Getting Started
 
-Next we create a Dictionary and an id2word by importing import gensim.corpora as corpora. And also use a filter no_below to only allow words that appeared in at least 5 documents into our model. no_above for the purpose of making sure that to only include words that appeared in 90% of the corpus.
+NOTE: Master branch of this code is already running live on AWS. If you are the next Lambda School Team to build on, you will inherit the AWS instances and also be given lectures on how to use the various AWS services. 
 
-# LDA Model.
+Nonetheless, if you want to work on this locally:
 
-Once we created the model we then tuned the hyper parameters accordingly. However we checked to see how good our model was by using a Coherence Score.
+1. Clone this repo. 
 
-# Coherence Score.
+2. Clone the other repo which has the web scraper and models: https://github.com/Lambda-School-Labs/Job-Funnel-ds-Data
 
-The best we got was a little above .60. The higher you go the more you will run into over fitting.
-However in the notebook the large commented out protion is us creating a function that list out the best possible hyper parameter combination and gives them to you back in a csv file to see whats the best hyper parameters to use for the LDA model. (this took a very long time to run)
+3. Create your own database and login credentials setup since the .gitignore has our live database credentials. Install any libraries from requirements of both repos that weren't added. 
 
-# pyLDAvis
+4. Run the scraper in the other repo to begin populating the data base.
 
-We used this vis to see what overlap we had to see if we could better tune the model
+## Featured Notebooks/Tutorials/Additional Resources 
 
-# Nearest Neighbor
-
-We then implantment another model Nearest Neighbors for the purposes of outputing the most related jobs to the grad
-
-### Data Sources
-
-https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/blob/master/docs/api/reference.md
-
+ To be updated
 
 ## Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+Full Name: Github : Slack Handle 
 
 Please note we have a [code of conduct](./code_of_conduct.md.md). Please follow it in all your interactions with the project.
 
@@ -125,9 +112,20 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
-## Documentation
+## Project Overview
 
-See [Backend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-be) for details on the backend of our project.
+https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/tree/master/docs
 
+[Trello Board](https://trello.com/b/dorhqi4o/job-funnel)
 
+[Product Canvas](https://www.notion.so/Job-Funnel-20ba287fac1c403c92a8ebb8766821a0)
 
+[UX Design files](https://www.figma.com/file/zljtkyosMyzAa1UMpcAIEd/Quick-Hire-Judy?node-id=263%3A2)
+
+## Template Link for this README
+
+https://github.com/sfbrigade/data-science-wg/blob/master/dswg_project_resources/Project-README-template.md
+
+[Backend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-be)
+
+[Data Science Repo](https://github.com/Lambda-School-Labs/Job-Funnel-ds-API)

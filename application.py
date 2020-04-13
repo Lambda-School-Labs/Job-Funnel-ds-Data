@@ -5,7 +5,11 @@ import sys
 import logging
 import time
 
+<<<<<<< HEAD
 from flask import Flask, jsonify, request
+=======
+from flask import Flask, jsonify, request, send_file
+>>>>>>> parent of 4a80433... Fix paths
 from flask.logging import default_handler
 from datafunctions.log.log import startLog, getLogFile, tailLogFile
 
@@ -14,6 +18,15 @@ SCRAPER_NAME = './run_scrapers.py'
 SCRAPER_NAME_PS = SCRAPER_NAME[2:]
 MODEL_NAME = './run_models.py'
 MODEL_NAME_PS = MODEL_NAME[2:]
+<<<<<<< HEAD
+=======
+LDA17_NN_PATH = 'datafunctions/model/models/lda17_files/nearest_neighbors'
+LDA17_M_PATH = 'datafunctions/model/models/lda17_files/model'
+LDA17_ME_PATH = 'datafunctions/model/models/lda17_files/model.expElogbeta.npy'
+LDA17_MI_PATH = 'datafunctions/model/models/lda17_files/model.id2word'
+LDA17_MS_PATH = 'datafunctions/model/models/lda17_files/model.state'
+LDA17_ID_PATH = 'datafunctions/model/models/lda17_files/id2word'
+>>>>>>> parent of 4a80433... Fix paths
 startLog(getLogFile(__file__))
 APP_LOG = logging.getLogger(__name__)
 

@@ -30,7 +30,7 @@ This repository holds code for the Models and Web Scraper of Quick Hire. It also
 
 ## QuickHire DS-Data More Detailed Description
 
-The scraper, application.py (probably rename) uses Selenium to scrape Monster.com. Pre-processing is done with some basic data cleaning and also some feature engineering with Spacey. The production model is KNearestNeighbors which is not yet deployed to live searches.  
+The scraper, application.py uses Selenium to scrape Monster.com. Pre-processing is done with some basic data cleaning and also some feature engineering with Spacey. The production model is KNearestNeighbors which is not yet deployed to live searches.  WARNING: DO NOT RENAME IT FROM application.py, AWS is looking for a file named application.py and it will break on production/master if you re-name and then push.
 
 Model stuff is in datafunctions.
 

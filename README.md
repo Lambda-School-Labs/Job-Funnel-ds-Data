@@ -44,7 +44,7 @@ Test Suite not implemented yet but to be updated here.
 
 Documentation for the models can be found in models.md
 
-Documentation for the API can be found [here] (https://github.com/Lambda-School-Labs/Job-Funnel-ds-API/tree/master/docs) for: 
+Documentation for the API can be found https://api.quickhire.dev/ for: 
 * project architecture 
 * database structure and schema 
 * API/ / reference (until migration to FastAPI is complete)
